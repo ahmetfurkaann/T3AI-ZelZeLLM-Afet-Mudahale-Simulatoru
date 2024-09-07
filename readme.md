@@ -17,17 +17,29 @@ Projenin sunumuna göz atabilirsiniz ->[Sunum linki](https://www.canva.com/desig
 
 Takım: ZelZeLLM <br>
 Takım ID: 2323217
+___________________________________________________________________________________________________________
+
+# MOTİVASYON 
+Çalışmamızı sunmadan önce, bir ön çalışma grubunda anket yoluyla bilgi toplandı. Mersin Üniversitesinde okuyan 18-30 yaş arasında olan depremde 11 ilden birinde olan gençlere
+Likert ölçekli sorular soruldu ve yanıtları analiz edildi. Anket sonuçlarına göre katılımcılar, 6 Şubat depreminin ardından acil yardım ekiplerinin olay yerine ulaşmasının çok zaman aldığı konusunda hemfikir. Dahası, gelecekteki afetlerde de benzer organizasyon sorunlarının tekrar edebileceğine dair ciddi endişeler taşımaktalar.  Genel olarak, katılımcılar afet yönetiminde organizasyonel ve teknolojik eksikliklere dikkat çekmekte ve gelecekte bu alanlarda iyileştirmelere ihtiyaç olduğunu vurgulamaktadır.
 
 # Bir AAFAD GELDİ
 
-Günümüz şartlarında afet yönetimi oldukça değerli ve ülkemiz için hayati bir öneme sahiptir. Deprem gibi doğal afetlerin etkilerini en aza indirmek, afet sonrası kurtarma çalışmalarını hızlı ve etkin bir şekilde organize etmek ve insanların güvenliğini sağlamak amacıyla stratejik bir öneme sahiptir.
+Anket çalışmamız bir yana, günümüz şartlarında afet yönetimi oldukça değerli ve ülkemiz için hayati bir öneme sahiptir. Deprem gibi doğal afetlerin etkilerini en aza indirmek, afet sonrası kurtarma çalışmalarını hızlı ve etkin bir şekilde organize etmek ve insanların güvenliğini sağlamak amacıyla stratejik bir öneme sahiptir.
 
 Projemizde bu amaçla "Deprem Simülasyonu ve Ekip Koordinasyonu" başlığı altında çalıştık. 
 
 ________________________________________________________________
 
+## Kullanıcı Arayüzü Gösterimi: 
+Simülasyon, iki yan yana harita üzerinde gösterilir. Biri risk bölgelerini içerirken, diğeri sadece ajanları ve afetzedeleri gösterir. Saha yönetim araçlarında ise saha ajanının durumunu güncellediği bir arayüz bulunmaktadır.
+
 <img src="https://github.com/user-attachments/assets/9d2c89eb-a774-4159-91e1-d417e47075c3" alt="image" width="750"/>
 
+Kullanıcı Akışı: Kullanıcı, simülasyon parametrelerini belirler (ajan sayısı, afetzede sayısı, vb.)
+Risk alanları manuel veya otomatik olarak belirlenir
+Simülasyon başlatılır
+Simülasyon sonunda detaylı bir rapor oluşturulur
 ________________________________________________________________
 
 ## ÖZGÜNLÜK & FAYDA

@@ -10,14 +10,14 @@
 ![Deprem](https://img.shields.io/badge/Deprem_Simulatoru-black)
 </div>
 
-# 2024 TEKNOFEST T3AI Doğal Dil İşleme - ZelZeLLM Takımı Dokümentasyonu
+# 2024 TEKNOFEST T3AI Doğal Dil İşleme - ZelZeLLM Takımı Dokümantasyonu
 # AFAD Deprem Öncesi Müdahale Simülasyonu 
 Bu proje TEKNOFEST 2024 Antalya T3AI Hackathon Yarışması Uygulama Geliştirme Kategorisi için geliştirilmiştir.
 
 
 
 Hackathon kapsamında gerçekleştirdiğimiz çalışmaları Türk Dili ve Türkçe Doğal Dil İşleme Literatürü için de açık kaynak olarak paylaşıyoruz. 
-Projenin sunumuna göz atabilirsiniz ->[Sunum linki](https://www.canva.com/design/DAGP_DaTFE/OSgWWIgIoOgGHdMnGdwhMQ/edit?utm_content=DAGP_DaTFE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+Projenin sunumuna göz atabilirsiniz ->[Sunum linki](https://www.canva.com/design/DAGQED1DHII/AFc5dToXvco319wUwFf9hQ/view?utm_content=DAGQED1DHII&utm_campaign=designshare&utm_medium=link&utm_source=editor)
 
 Takım Adı: ZelZeLLM <br>
 Takım ID: 2323217

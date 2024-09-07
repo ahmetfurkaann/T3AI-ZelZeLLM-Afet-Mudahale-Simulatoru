@@ -61,16 +61,6 @@ Bu yapı ile:
 Ekipleri, depremzedeleri, ekip ve depremzede önceliğini, ekip görevini, kaç depremzede olduğu gibi bilgiler manuel olarak sisteme verilebilmekte.
 
 
-## ÖZGÜNLÜK & İnovasyon
-
-Amacımız doğrultusunda geliştirdiğimiz arayüzün, 
-
-* A: abc
-  
-* B: bcd
-
-* C: cde
-
 # Proje Kapsamında T3AI Modelini Nasıl Kullandık?
 
 Entegrasyon Noktaları: T3AI BDM API, tweet'lerden afetzedelerin öncelik seviyelerini belirlemek için kullanılmıştır. API, her tweet için 1 (düşük) ile 4 (kritik) arasında bir öncelik seviyesi döndürür. Aynı zamanda saha araçları arasında gerçek senaryo kullanımına hazır bir  T3AI BDM API temelli parser bulunmakta.

@@ -52,3 +52,15 @@ Amacımız doğrultusunda geliştirdiğimiz arayüzün,
 
 * C: cde
 
+# Proje Kapsamında T3AI Modelini Nasıl Kullandık?
+
+Entegrasyon Noktaları: T3AI BDM API, tweet'lerden afetzedelerin öncelik seviyelerini belirlemek için kullanılmıştır. API, her tweet için 1 (düşük) ile 4 (kritik) arasında bir öncelik seviyesi döndürür. Aynı zamanda saha araçları arasında gerçek senaryo kullanımına hazır bir  T3AI BDM API temelli parser bulunmakta.
+
+Kullanıcı Etkileşimi: Kullanıcılar, simülasyon sırasında manuel olarak afetzede sayısını ekleyebilir ve bu afetzedelerin öncelik seviyeleri T3AI BDM API kullanılarak otomatik olarak belirlenir. Afetzedelerin otomatik eklendiği durumda da öncelik T3AI BDM API tarafından belirlenebilir.
+
+## İyileştirme Çalışmaları: 
+
+BDM-API Prompt Engineering: T3AI BDM API'si, afet durumlarına özgü örnek tweet'ler ve öncelik seviyeleri ile eğitilmiştir. Örnekler, düşük öncelikli yiyecek/su/barınma ihtiyaçlarından kritik durumdaki enkaz altındaki kişilere kadar çeşitli senaryoları kapsamaktadır.
+Hata toleransı: API'nin cevap vermediği veya hata verdiği durumlarda, sistem 1 ile 4 arasında rastgele bir öncelik atayarak çalışmaya devam etmektedir.
+Dinamik öncelik güncelleme: Afetzedelerin bekleme süreleri 50 saniyeyi aştığında, öncelik seviyeleri otomatik olarak artırılmaktadır.
+Çok yönlü fayda hesaplaması: Görev atamalarında mesafe, aciliyet, bekleme süresi ve ajan rolü faktörleri dikkate alınarak kapsamlı bir fayda hesaplaması yapılmaktadır.

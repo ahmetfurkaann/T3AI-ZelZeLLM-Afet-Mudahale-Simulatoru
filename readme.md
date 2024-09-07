@@ -34,12 +34,22 @@ ________________________________________________________________
 ## Kullanıcı Arayüzü Gösterimi: 
 Simülasyon, iki yan yana harita üzerinde gösterilir. Biri risk bölgelerini içerirken, diğeri sadece ajanları ve afetzedeleri gösterir. Saha yönetim araçlarında ise saha ajanının durumunu güncellediği bir arayüz bulunmaktadır.
 
-<img src="https://github.com/user-attachments/assets/9d2c89eb-a774-4159-91e1-d417e47075c3" alt="image" width="750"/>
+https://github.com/user-attachments/assets/ddd962d2-ae88-4d01-ad3c-db9fff872a54
 
 Kullanıcı Akışı: Kullanıcı, simülasyon parametrelerini belirler (ajan sayısı, afetzede sayısı, vb.)
 Risk alanları manuel veya otomatik olarak belirlenir
 Simülasyon başlatılır
 Simülasyon sonunda detaylı bir rapor oluşturulur
+
+<img src="https://github.com/user-attachments/assets/abcb24a0-37b5-463c-ba31-41ccef0fdbf7" alt="image" width="700"/>
+
+İşlem bittikten sonra detaylıca işlenen log kayıtları ve operasyon özeti, ayrı bir dosyaya raporlanır.
+* Ekiplerin operasyon boyunca hangi zamanda hangi işleri icra ettikleri
+* Ekiplerin kaynak kullanımları
+* Ekiplerin Verimlilikleri
+  Başta olmak üzere benzer özellikler kaydedilir. 
+
+
 ________________________________________________________________
 
 ## ÖZGÜNLÜK & İnovasyon

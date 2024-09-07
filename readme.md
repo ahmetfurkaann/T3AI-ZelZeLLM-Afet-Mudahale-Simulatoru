@@ -84,3 +84,9 @@ BDM-API Prompt Engineering: T3AI BDM API'si, afet durumlarına özgü örnek twe
 Hata toleransı: API'nin cevap vermediği veya hata verdiği durumlarda, sistem 1 ile 4 arasında rastgele bir öncelik atayarak çalışmaya devam etmektedir.
 Dinamik öncelik güncelleme: Afetzedelerin bekleme süreleri 50 saniyeyi aştığında, öncelik seviyeleri otomatik olarak artırılmaktadır.
 Çok yönlü fayda hesaplaması: Görev atamalarında mesafe, aciliyet, bekleme süresi ve ajan rolü faktörleri dikkate alınarak kapsamlı bir fayda hesaplaması yapılmaktadır.
+
+## Uygulamayı Lokalde Çalıştırma
+```console
+pip install -r requirements.txt
+```
+

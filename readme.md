@@ -12,6 +12,10 @@
 
 # 2024 TEKNOFEST T3AI Doğal Dil İşleme - ZelZeLLM Takımı Dokümentasyonu
 
+Bu proje TEKNOFEST 2024 Antalya T3AI Hackathon Yarışması Uygulama Geliştirme Kategorisi için geliştirilmiştir.
+
+
+
 Hackathon kapsamında gerçekleştirdiğimiz çalışmaları Türk Dili ve Türkçe Doğal Dil İşleme Literatürü için de açık kaynak olarak paylaşıyoruz. 
 Projenin sunumuna göz atabilirsiniz ->[Sunum linki](https://www.canva.com/design/DAGP_DaTFE/OSgWWIgIoOgGHdMnGdwhMQ/edit?utm_content=DAGP_DaTFE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 

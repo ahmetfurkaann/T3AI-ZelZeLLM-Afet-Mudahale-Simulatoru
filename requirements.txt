@@ -1,0 +1,6 @@
+PyQt5
+networkx 
+osmnx
+matplotlib
+enum
+pydantic

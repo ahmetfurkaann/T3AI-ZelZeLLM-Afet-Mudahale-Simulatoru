@@ -42,7 +42,7 @@ Simülasyon başlatılır
 Simülasyon sonunda detaylı bir rapor oluşturulur
 ________________________________________________________________
 
-## ÖZGÜNLÜK & FAYDA
+## ÖZGÜNLÜK & İnovasyon
 
 Amacımız doğrultusunda geliştirdiğimiz arayüzün, 
 

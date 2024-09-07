@@ -2,5 +2,5 @@ PyQt5
 networkx 
 osmnx
 matplotlib
-enum
+tqdm
 pydantic

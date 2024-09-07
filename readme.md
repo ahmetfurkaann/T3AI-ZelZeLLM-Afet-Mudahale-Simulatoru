@@ -29,7 +29,7 @@ Takım ID: 2323217
 ___________________________________________________________________________________________________________
 
 # MOTİVASYON 
-Çalışmamızı sunmadan önce, bir ön çalışma grubunda anket yoluyla bilgi toplandı. Mersin Üniversitesinde okuyan 18-30 yaş arasında olan depremde 11 ilden birinde olan gençlere
+Çalışmamızı sunmadan önce, bir ön çalışma grubunda anket yoluyla bilgi toplandı. 18-30 yaş arasında olan depremde 11 ilden birinde olan gençlere
 Likert ölçekli sorular soruldu ve yanıtları analiz edildi. Anket sonuçlarına göre katılımcılar, 6 Şubat depreminin ardından acil yardım ekiplerinin olay yerine ulaşmasının çok zaman aldığı konusunda hemfikir. Dahası, gelecekteki afetlerde de benzer organizasyon sorunlarının tekrar edebileceğine dair ciddi endişeler taşımaktalar.  Genel olarak, katılımcılar afet yönetiminde organizasyonel ve teknolojik eksikliklere dikkat çekmekte ve gelecekte bu alanlarda iyileştirmelere ihtiyaç olduğunu vurgulamaktadır.
 
 # Bir AAFAD GELDİ

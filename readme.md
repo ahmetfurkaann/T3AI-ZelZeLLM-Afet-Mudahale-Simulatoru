@@ -11,7 +11,7 @@
 </div>
 
 # 2024 TEKNOFEST T3AI Doğal Dil İşleme - ZelZeLLM Takımı Dokümentasyonu
-
+# AFAD Deprem Öncesi Müdahale Simülasyonu 
 Bu proje TEKNOFEST 2024 Antalya T3AI Hackathon Yarışması Uygulama Geliştirme Kategorisi için geliştirilmiştir.
 
 

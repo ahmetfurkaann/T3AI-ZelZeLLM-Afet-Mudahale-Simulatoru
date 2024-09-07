@@ -1,26 +1,33 @@
+#ZelZELLM
+
+import os
+import logging
+import json
+import csv
+import random
+import math
+
+from datetime import datetime
+from enum     import Enum
+from typing   import List
+
+import numpy as np
+import requests
+import networkx as nx
+import osmnx as ox
+
+from pydantic import BaseModel
+from tqdm     import tqdm
+from scipy.optimize import linear_sum_assignment
+
 import matplotlib
 matplotlib.use('TkAgg')
 
-import random
-import math
-import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib.animation import FuncAnimation
-from enum import Enum
 import matplotlib.colors as mcolors
-from tqdm import tqdm
-import osmnx as ox
-import networkx as nx
-import requests
-import json
-from pydantic import BaseModel
-from typing import List
-import logging
-from datetime import datetime
-import csv
-import os
-from matplotlib.patches import Rectangle, Patch
-from scipy.optimize import linear_sum_assignment
+
+from matplotlib.patches   import Rectangle, Patch
+from matplotlib.animation import FuncAnimation
 
 # JSON verisi
 chat_model_config = {
@@ -58,24 +65,24 @@ def convert_to_special_format(json_data):
     return output
 
 class PriorityLevel(Enum):
-    LOW = 1
-    MEDIUM = 2
-    HIGH = 3
+    LOW      = 1
+    MEDIUM   = 2
+    HIGH     = 3
     CRITICAL = 4
 
 class StreetType(Enum):
-    MAIN_ROAD = 1
+    MAIN_ROAD   = 1
     SIDE_STREET = 2
 
 class StreetStatus(Enum):
-    OPEN = 1
-    PARTIALLY_BLOCKED = 2
     CLOSED = 3
-
+    OPEN   = 1
+    PARTIALLY_BLOCKED = 2
+    
 class VictimStatus(Enum):
-    TRAPPED = 1
-    RESCUED = 2
-    TREATED = 3
+    TRAPPED    = 1
+    RESCUED    = 2
+    TREATED    = 3
     STABILIZED = 4
 
 class AgentRole(Enum):
@@ -106,29 +113,29 @@ class Victim:
     def __init__(self, x, y, id, tweet, priority, G, region_id, region_difficulty, simulation):
         self.x = x
         self.y = y
-        self.node = get_nearest_node(G, x, y)
-        self.id = id
+        self.node  = get_nearest_node(G, x, y)
+        self.id    = id
         self.tweet = tweet
         self.priority = priority
-        self.status = VictimStatus.TRAPPED
-        self.waiting_time = 0
-        self.rescue_time = 0
+        self.status   = VictimStatus.TRAPPED
+        self.waiting_time   = 0
+        self.rescue_time    = 0
         self.treatment_time = 0
         self.region_id = region_id
         self.region_difficulty = region_difficulty
         self.simulation = simulation
         self.initial_priority = priority
         self.time_in_current_priority = 0
-        self.last_help_time = 0
+        self.last_help_time   = 0
         self.priority_counter = 0
         self.priority_threshold = self.get_priority_threshold()
         self.deterioration_rate = self.calculate_deterioration_rate()
 
     def get_priority_threshold(self):
         thresholds = {
-            PriorityLevel.LOW: 100,
+            PriorityLevel.LOW:    100,
             PriorityLevel.MEDIUM: 150,
-            PriorityLevel.HIGH: 200,
+            PriorityLevel.HIGH:   200,
             PriorityLevel.CRITICAL: float('inf')  # CRITICAL seviyesi artmayacak
         }
         return thresholds[self.priority]
@@ -139,7 +146,7 @@ class Victim:
 
     def update(self):
         if self.status == VictimStatus.TRAPPED:
-            self.waiting_time += 1
+            self.waiting_time     += 1
             self.priority_counter += 1
 
             if random.random() < self.deterioration_rate:
@@ -147,7 +154,7 @@ class Victim:
 
             if self.priority_counter >= self.priority_threshold:
                 self.escalate_priority()
-                self.priority_counter = 0
+                self.priority_counter   = 0
                 self.priority_threshold = self.get_priority_threshold()
                 self.deterioration_rate = self.calculate_deterioration_rate()
 
@@ -177,13 +184,13 @@ class Victim:
 
 class Agent:
     def __init__(self, node, role, capacity, id, G, use_resources):
-        self.node = node
+        self.node      = node
         self.x, self.y = G.nodes[node]['x'], G.nodes[node]['y']
-        self.role = role
-        self.capacity = capacity
+        self.role      = role
+        self.capacity  = capacity
         self.resources = capacity
         self.id = id
-        self.stationary = False
+        self.stationary  = False
         self.last_action = None
         self.specialized_priority = self.get_specialized_priority()
         self.use_resources = use_resources
@@ -229,17 +236,17 @@ class Agent:
         if self.role != AgentRole.SEARCH_RESCUE:
             return 0
 
-        distance = math.sqrt((self.x - victim.x)**2 + (self.y - victim.y)**2)
+        distance        = math.sqrt((self.x - victim.x)**2 + (self.y - victim.y)**2)
         distance_factor = 1 / (1 + distance/1000)
-        urgency_factor = victim.priority.value / PriorityLevel.CRITICAL.value
-        waiting_time = current_time - victim.last_help_time
-        waiting_factor = min(1, waiting_time / 100)
-        difficulty_factor = victim.region_difficulty
+        urgency_factor  = victim.priority.value / PriorityLevel.CRITICAL.value
+        waiting_time    = current_time - victim.last_help_time
+        waiting_factor  = min(1, waiting_time / 100)
+        difficulty_factor    = victim.region_difficulty
         deterioration_factor = victim.deterioration_rate * 1000
 
-        utility = (0.2 * distance_factor + 
-                   0.3 * urgency_factor + 
-                   0.2 * waiting_factor + 
+        utility = (0.2  * distance_factor + 
+                   0.3  * urgency_factor  + 
+                   0.2  * waiting_factor  + 
                    0.15 * difficulty_factor +
                    0.15 * deterioration_factor)
 
@@ -265,24 +272,25 @@ class Agent:
 
 class Simulation:
     def __init__(self, G, num_agents, max_steps, tweets_file, use_resources):
-        self.G = G
+        self.G         = G
         self.max_steps = 2000  # 1000'den 2000'e çıkardık
         self.current_step = 0
-        self.streets = self.generate_streets()
+        self.streets      = self.generate_streets()
         self.create_regions(5)
         self.tweets = load_tweets(tweets_file)
         if not self.tweets:
             print("Tweet dosyası yüklenemedi. Varsayılan tweet'ler kullanılacak.")
             self.tweets = [{"text": f"Yardım edin! Enkaz altındayım. Konum: {i}"} for i in range(1000)]
+            
         self.victims = []
-        self.agents = self.generate_agents(num_agents, use_resources)
+        self.agents  = self.generate_agents(num_agents, use_resources)
         self.num_agents = num_agents
         self.resource_stations = self.generate_resource_stations(3)
         self.setup_logging()
-        self.report_data = []
+        self.report_data   = []
         self.use_resources = use_resources
         self.communication_range = 500
-        self.manual_victim_mode = False
+        self.manual_victim_mode  = False
 
     def generate_agents(self, num_agents, use_resources):
         agents = []
@@ -460,10 +468,12 @@ class Simulation:
         if agent.role == AgentRole.SEARCH_RESCUE:
             victim.status = VictimStatus.RESCUED
             victim.last_help_time = self.current_step
+            
         elif agent.role == AgentRole.MEDICAL:
             victim.status = VictimStatus.TREATED
             victim.priority = PriorityLevel.LOW
             victim.last_help_time = self.current_step
+            
         elif agent.role == AgentRole.FOOD_SUPPLY:
             if victim.status == VictimStatus.RESCUED:
                 victim.status = VictimStatus.TREATED
@@ -942,3 +952,5 @@ if __name__ == "__main__":
         print(f"Bir hata oluştu: {e}")
         import traceback
         traceback.print_exc()
+
+#ZelZELLM

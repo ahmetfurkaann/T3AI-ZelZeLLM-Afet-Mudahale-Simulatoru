@@ -40,6 +40,8 @@ Projemizde bu amaçla "Deprem Simülasyonu ve Ekip Koordinasyonu" başlığı al
 
 ________________________________________________________________
 
+## Uygulamadan Ekran Görüntüleri
+
 ## Kullanıcı Arayüzü Gösterimi: 
 Simülasyon, iki yan yana harita üzerinde gösterilir. Biri risk bölgelerini içerirken, diğeri sadece ajanları ve afetzedeleri gösterir. Saha yönetim araçlarında ise saha ajanının durumunu güncellediği bir arayüz bulunmaktadır.
 

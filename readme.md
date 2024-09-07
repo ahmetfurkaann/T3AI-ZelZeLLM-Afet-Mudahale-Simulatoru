@@ -89,4 +89,18 @@ Dinamik öncelik güncelleme: Afetzedelerin bekleme süreleri 50 saniyeyi aştı
 ```console
 pip install -r requirements.txt
 ```
+Uygun çevre ve kütüphaneler yüklendiken sonra:
+
+```console
+python3 SahaArayuzu.py
+```
+```console
+python3 Simulasyon.py
+```
+```console
+python3 Optimizasyon.py
+```
+
+İle geliştirilen arayüzler incelenebilir.
+
 

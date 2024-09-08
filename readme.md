@@ -64,7 +64,7 @@ ________________________________________________________________
 
 # Dinamik Çevre
 
-Arayüz ile, belirli elementlerin otomatik olarak oluşturulmasının yanı sıra, mahalle veya ilçelerin en otpimal simülasyonlarına ulaşmak için dinamik yapı eklendi. 
+Arayüz ile, belirli elementlerin otomatik olarak oluşturulmasının yanı sıra, mahalle veya ilçelerin en optimal simülasyonlarına ulaşmak için dinamik yapı eklendi. 
 
 https://github.com/user-attachments/assets/b350c5da-40c8-4cf9-b7aa-95ad2f578d29
 
